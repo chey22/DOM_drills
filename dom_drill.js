@@ -1,9 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    // option 1
+
     let div = document.createElement("div");
     div.className = "header-container";
     document.body.appendChild(div);
 
+    //or option 2, per Josh. You'd have to replace div with header-container
 
+    //let header-container = document.createElement("div");
+    //header-container.className = "header-container";
+
+
+    //step 4
     let h1 = document.createElement("h1");
     let h1Text = document.createTextNode("This is an h1.");
     h1.className = "h1";
@@ -63,27 +72,28 @@ document.addEventListener('DOMContentLoaded', function () {
         h3.style.color = randomColor;
     });
 
-    h4.addEventListener("dblclick", function() {
+    h4.addEventListener("dblclick", function () {
         let randomColor = getRandomColor();
         h4.style.color = randomColor;
     });
 
-    h5.addEventListener("dblclick", function() {
+    h5.addEventListener("dblclick", function () {
         let randomColor = getRandomColor();
         h5.style.color = randomColor;
     });
 
-    h6.addEventListener("dblclick", function() {
+    h6.addEventListener("dblclick", function () {
         let randomColor = getRandomColor();
         h6.style.color = randomColor;
     });
 
     let l = 1
     let button = document.getElementsByClassName("button");
-    button[0].addEventListener("click", function() {
+    button[0].addEventListener("click", function () {
         let ul = document.createElement("ul")
         div.appendChild(ul);
         let li = document.createElement("li")
+        //template literal - string interpolation
         ul.appendChild(li)
         let liText = document.createTextNode(`This is list item ${l}.`);
         li.appendChild(liText);
@@ -93,15 +103,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-function liClicked(e) {
-    let randomColor = getRandomColor();
-    e.currentTarget.style.color = randomColor;
-};
+    function liClicked(e) {
+        let randomColor = getRandomColor();
+        e.currentTarget.style.color = randomColor;
+    };
 
-function liDoubleClick(e) {
-    element = e.currentTarget
-    element.parentNode.removeChild(element)
-}
+    function liDoubleClick(e) {
+        element = e.currentTarget
+        element.parentNode.removeChild(element)
+    }
 
 
 });
+
+// should have done 2 arrays: one for colors and one for headers,
+// then you can do:
+// headers.forEach(function(element) {
+//     element.addEventListener("dblclick", function() {
+//         changeColor(element)
+//     })
+// });
