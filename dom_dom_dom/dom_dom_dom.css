@@ -1,0 +1,17 @@
+div {
+    background: black;
+    width: 100px;
+    height: 100px;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boxes:hover {
+    color: white;
+}
